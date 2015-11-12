@@ -1,0 +1,29 @@
+service.info:
+  name: Restful API Service
+  version: 1.0.0
+
+spring.jpa.show-sql: true
+
+logging.level.com.skplanet: WARN
+logging.level.org.springframework.boot: DEBUG
+logging.level.org.springframework.web: DEBUG
+
+---
+spring:
+  profiles: dev
+
+service.info:
+  name: Restful API Service - DEV
+
+spring.datasource.url: jdbc:h2:file:./data/board-dev
+spring.jpa.hibernate.ddl-auto: update 
+
+---
+spring:
+  profiles: prod
+    
+service.info:
+  name: Restful API Service - PROD
+  
+spring.datasource.url: jdbc:h2:file:./data/board-prod
+spring.jpa.hibernate.ddl-auto: valdated
